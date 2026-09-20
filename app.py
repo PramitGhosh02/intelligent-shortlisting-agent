@@ -179,10 +179,12 @@ if __name__ == "__main__":
   print(f" Database: {config.DB_PATH}")
   print(f"{'='*60}\n")
   
+  port = int(os.environ.get("PORT", 7860))
+  
   app.launch(
     share=False,
     server_name="0.0.0.0",
-    server_port=7860,
+    server_port=port,
     show_error=True,
     css=CUSTOM_CSS,
     theme=get_theme(),
