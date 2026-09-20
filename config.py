@@ -25,37 +25,37 @@ SAMPLE_DATA_DIR.mkdir(exist_ok=True)
 DEFAULT_LLM_PROVIDER = "gemini" # Options: "gemini", "openai", "ollama"
 
 LLM_MODELS = {
-  "gemini": [
-    "gemini/gemini-3.8-flash",
-    "gemini/gemini-3.7-flash",
-    "gemini/gemini-3.6-flash",
-    "gemini/gemini-2.5-flash",
-  ],
-  "openai": [
-    "gpt-4o",
-    "gpt-4o-mini",
-    "gpt-4-turbo",
-    "gpt-3.5-turbo",
-  ],
-  "ollama": [
-    "ollama/llama3.2",
-    "ollama/llama3.1",
-    "ollama/mistral",
-    "ollama/gemma2",
-  ],
-  "groq": [
-    "groq/openai/gpt-oss-120b",
-    "groq/openai/gpt-oss-20b",
-    "groq/groq/compound",
-    "groq/qwen/qwen3.8-27b",
-  ]
+ "gemini": [
+  "gemini/gemini-3.8-flash",
+  "gemini/gemini-3.7-flash",
+  "gemini/gemini-3.6-flash",
+  "gemini/gemini-2.5-flash",
+ ],
+ "openai": [
+  "gpt-4o",
+  "gpt-4o-mini",
+  "gpt-4-turbo",
+  "gpt-3.5-turbo",
+ ],
+ "ollama": [
+  "ollama/llama3.2",
+  "ollama/llama3.1",
+  "ollama/mistral",
+  "ollama/gemma2",
+ ],
+ "groq": [
+  "groq/openai/gpt-oss-120b",
+  "groq/openai/gpt-oss-20b",
+  "groq/groq/compound",
+  "groq/qwen/qwen3.8-27b",
+ ]
 }
 
 DEFAULT_MODELS = {
-  "gemini": "gemini/gemini-3.8-flash",
-  "openai": "gpt-4o-mini",
-  "ollama": "ollama/llama3.2",
-  "groq": "groq/openai/gpt-oss-120b",
+ "gemini": "gemini/gemini-3.8-flash",
+ "openai": "gpt-4o-mini",
+ "ollama": "ollama/llama3.2",
+ "groq": "groq/openai/gpt-oss-120b",
 }
 
 DEFAULT_TEMPERATURE = 0.3
@@ -69,9 +69,9 @@ DEFAULT_SMTP_PORT = 587
 # ─── Scoring Configuration ───────────────────────────────────────────────────
 
 SCORE_THRESHOLDS = {
-  "excellent": 80,  # Green badge
-  "good": 60,    # Yellow badge
-  "poor": 0,     # Red badge
+ "excellent": 80, # Green badge
+ "good": 60,  # Yellow badge
+ "poor": 0,   # Red badge
 }
 
 SHORTLIST_THRESHOLD = 70 # Minimum score to auto-shortlist
