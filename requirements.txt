@@ -1,0 +1,10 @@
+gradio
+crewai
+crewai-tools
+litellm
+pandas
+pydantic
+python-docx
+pymupdf
+python-dotenv
+matplotlib

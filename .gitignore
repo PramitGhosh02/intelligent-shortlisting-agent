@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Project Data (Avoid pushing PII resumes and local databases to public GitHub)
+data/uploads/
+*.db
+*.sqlite3
+.gradio/
+
+# OS Files
+.DS_Store
+Thumbs.db

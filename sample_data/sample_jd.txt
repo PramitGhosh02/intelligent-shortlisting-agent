@@ -1,0 +1,40 @@
+We are looking for a Senior Python Developer to join our Engineering team at TechCorp Solutions.
+
+About the Role:
+As a Senior Python Developer, you will be responsible for designing, developing, and maintaining our core backend services. You will work closely with cross-functional teams including frontend, DevOps, data science, and product management.
+
+Key Responsibilities:
+- Design and develop scalable backend services using Python and FastAPI/Django
+- Build and maintain RESTful APIs and microservices architecture
+- Implement data processing pipelines and ETL workflows
+- Write comprehensive unit tests and integration tests (pytest)
+- Conduct code reviews and mentor junior developers
+- Participate in system design and architecture decisions
+- Optimize application performance and database queries
+- Implement CI/CD pipelines and deployment automation
+
+Required Qualifications:
+- 3-7 years of professional Python development experience
+- Strong proficiency in Python frameworks: Django, FastAPI, or Flask
+- Solid experience with SQL databases (PostgreSQL, MySQL) and ORMs (SQLAlchemy, Django ORM)
+- Working knowledge of Docker, Kubernetes, and containerization
+- Experience with CI/CD tools (GitHub Actions, Jenkins, GitLab CI)
+- Familiarity with cloud platforms (AWS, GCP, or Azure)
+- Strong understanding of REST API design principles and microservices
+- Proficiency with Git version control
+- Bachelor's degree in Computer Science, Software Engineering, or related field
+
+Preferred Qualifications:
+- Experience with machine learning libraries (scikit-learn, TensorFlow, PyTorch)
+- Knowledge of message queues (RabbitMQ, Kafka, Redis)
+- Experience with NoSQL databases (MongoDB, DynamoDB)
+- Contributions to open-source projects
+- Experience with Agile/Scrum methodologies
+- Knowledge of GraphQL
+
+What We Offer:
+- Competitive salary and equity package
+- Remote-friendly work environment
+- Learning and development budget
+- Health insurance and wellness benefits
+- Collaborative and innovative team culture
