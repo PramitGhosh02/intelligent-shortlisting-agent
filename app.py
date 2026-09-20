@@ -165,23 +165,21 @@ def build_app() -> gr.Blocks:
 
  return app
 
-def main():
- """Entry point: builds and launches the Gradio application."""
- print(f"\n{'='*60}")
- print(f" Intelligent Candidate Shortlisting Agent")
- print(f" Version: {config.APP_VERSION}")
- print(f" Database: {config.DB_PATH}")
- print(f"{'='*60}\n")
-
- app = build_app()
- app.launch(
-  share=False,
-  server_name="0.0.0.0",
-  server_port=7860,
-  show_error=True,
-  css=CUSTOM_CSS,
-  theme=get_theme(),
- )
+# Build the global app instance for Hugging Face Spaces
+app = build_app()
 
 if __name__ == "__main__":
- main()
+  print(f"\n{'='*60}")
+  print(f" Intelligent Candidate Shortlisting Agent")
+  print(f" Version: {config.APP_VERSION}")
+  print(f" Database: {config.DB_PATH}")
+  print(f"{'='*60}\n")
+  
+  app.launch(
+    share=False,
+    server_name="0.0.0.0",
+    server_port=7860,
+    show_error=True,
+    css=CUSTOM_CSS,
+    theme=get_theme(),
+  )
