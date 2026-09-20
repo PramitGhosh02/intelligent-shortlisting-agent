@@ -5,6 +5,11 @@ Entry point for the Gradio-based multi-agent recruitment tool.
 Assembles all UI tabs and wires up event handlers.
 """
 
+import os
+# Disable telemetry to prevent OpenTelemetry shutdown crashes on Hugging Face Spaces
+os.environ['OTEL_SDK_DISABLED'] = 'true'
+os.environ['CREWAI_TELEMETRY_OPTOUT'] = 'true'
+
 import gradio as gr
 
 import config
@@ -12,31 +17,30 @@ from services.database import init_db
 from ui.theme import get_theme, CUSTOM_CSS
 from ui.tabs.job_input import create_job_input_tab, analyze_jd_handler, load_sample_jd
 from ui.tabs.resume_upload import (
- create_resume_upload_tab,
- upload_and_parse_resumes,
- run_shortlisting_pipeline,
+  create_resume_upload_tab,
+  upload_and_parse_resumes,
+  run_shortlisting_pipeline,
 )
 from ui.tabs.rankings import (
- create_rankings_tab,
- load_rankings,
- shortlist_top_n,
+  create_rankings_tab,
+  load_rankings,
+  shortlist_top_n,
 )
 from ui.tabs.dashboard import create_dashboard_tab, load_dashboard
 from ui.tabs.email_tab import (
- create_email_tab,
- load_shortlisted_candidates,
- send_emails_handler,
+  create_email_tab,
+  load_shortlisted_candidates,
+  send_emails_handler,
 )
 from ui.tabs.settings import create_settings_tab, load_settings
 
-
 def build_app() -> gr.Blocks:
- """Builds and returns the complete Gradio application."""
+  """Builds and returns the complete Gradio application."""
 
- # Initialize the database
- init_db()
+  # Initialize the database
+  init_db()
 
- theme = get_theme()
+  theme = get_theme()
 
  with gr.Blocks(
   title=config.APP_TITLE,
