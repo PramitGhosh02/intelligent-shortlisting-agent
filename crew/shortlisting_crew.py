@@ -52,6 +52,10 @@ def run_shortlisting(
   except (json.JSONDecodeError, TypeError):
     requirements = {}
 
+  # Truncate Job Description aggressively to prevent token blowups
+  if len(job_description) > 1000:
+      job_description = job_description[:1000] + "\n... [TRUNCATED] ..."
+
   # Format all resumes into a single block for the crew
   resumes_block = _format_resumes_for_crew(resume_data)
 
@@ -205,13 +209,20 @@ def run_shortlisting(
 
 
 def _format_resumes_for_crew(resume_data: list[dict]) -> str:
-  """Formats all resume data into a single text block for the crew."""
+  """Formats all resume data into a single text block for the crew, truncating to save tokens."""
   parts = []
   for i, r in enumerate(resume_data, 1):
     cand_id = r.get("candidate_id", i)
     parts.append(f"--- CANDIDATE [ID: {cand_id}]: {r.get('name', 'Unknown')} ---")
-    parts.append(r.get("raw_text", "No text available"))
-    parts.append(f"--- END CANDIDATE {i} ---\n")
+    
+    # TRUNCATE the raw text aggressively to prevent blowing past the 8000 Token limit!
+    raw_text = r.get("raw_text", "No text available")
+    # 800 chars is roughly 150-200 tokens. Plenty for extracting key skills.
+    if len(raw_text) > 800:
+        raw_text = raw_text[:800] + "\n... [TRUNCATED] ..."
+        
+    parts.append(raw_text)
+    parts.append(f"--- END CANDIDATE [ID: {cand_id}] ---\n")
   return "\n".join(parts)
 
 
